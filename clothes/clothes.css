@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+body{
+    background: #00bf8f;  /* fallback for old browsers */
+    margin: 0;
+}
+
+/*contenido principal*/
+.contenedor-imagenes{
+    display: flex;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 3px; 
+}
+
+/*contenedor donde estan los productos*/
+.contenedor-imagenes .imagen{
+    width: 32%;
+    position: relative; /*esta propiedad nos permite darle el efecto overlay*/
+    height: 500px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 6px  rgba(0, 0, 0, .5);
+    }
+
+    .imagen  img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /*estilo y posicion de donde sale el overlay*/
+    .overlay{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(12, 231, 253, .75);
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+        overflow: hidden;
+        
+    }
+    /*posicion y estilos de los titulos dentro del overlay*/
+    .overlay h2, h3, h4, h5{
+        text-align: center;
+        color: white;
+        font-weight: 300;
+        font-size: 30px;
+        position: absolute;
+        top: 10%;
+        left: 20%;
+        transform: translate(-50%, -100%);  
+    }
+/*posicion del overlay*/
+    
+
+   .imagene .overlay1{
+        position: absolute;
+        top: 17%;
+        left:-100%;
+        background: #1F1C2C;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #928DAB, #1F1C2C);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #928DAB, #1F1C2C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        width: 300px;
+        height: 500px;
+        transition: .5s ease;
+        overflow: hidden;
+    }
+
+   .imagene .overlay1, h1, h2, h3, h4, h5{
+        text-align: center;
+        color: white;
+        font-weight: 300;
+        font-size: 30px;
+        position: absolute;
+    }
+    .overlay1 h2{
+        top: 35px;
+        left: 10px;
+        text-decoration: underline;
+    }
+    .overlay1 h3{
+        top: 180px;
+        left: 45px;
+        text-decoration: underline;
+    }
+
+    .overlay1 h4{
+        top: 300px;
+        left: 46px;
+        text-decoration: underline;
+    }
+    .overlay1 h5{
+        top: 415px;
+        left: 53px;
+        text-decoration: underline;
+    }
+    .imagene:hover .overlay1{
+        left:0;
+    }
+
+
+
+    /* efecto ligthbox configuracion */
+
+    .modal:target{
+display: block;
+position: fixed;
+background-color: rgba(0,0,0,0.7);
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+.modal{
+    display: none;
+}
+
+.imagene{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagene .efecto{
+    width: 50vw;
+    height: 600px;
+    max-width: 100%;
+    border: 8px solid #8E0E00;
+    box-shadow: 0 0 10px rgb(226, 230, 40);
+    box-sizing: border-box;
+    animation: movimiento 20s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.botonCierre{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    border-radius: 50%;
+    background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 13px;
+    position: absolute;
+    top: 10%;
+    left: 77%;
+    width: 40px;
+    height: 40px;
+    line-height: 20px;
+    opacity: .7;
+    transition: transform .4s ease-in;
+}
+
+.botonCierre:hover{
+    transform: scale(1.2);
+    transition: transform .5s ease-in;
+    opacity: 1;
+}
+
+
+
+/*estilo boton de compra*/
+.boton{
+    position: absolute;
+    overflow: hidden;
+    border: 2px solid #FFAFBD;
+    opacity: .8;
+    width: 150px;
+    z-index: 100;
+    font-size: 15px;
+    padding: .5rem 1rem;
+    bottom: 15%;
+    left: 26%;
+}
+
+.botonEstilo{
+    transition: color .5s;
+    
+}
+
+.botonEstilo:hover{
+    color: #00f80c;
+    opacity: 1;
+}
+
+.botonEstilo::before,
+.botonEstilo::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: -1;
+}
+
+.botonEstilo:hover::before{
+    background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+}
+
+/*efecto rayita*/
+.botonEstilo::after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    height: 30%;
+    background-color: #ffffff;
+    transform: rotate(45deg) translateY(650%);
+    transition: background-color .4s;
+    }
+
+    .botonEstilo:hover::after{
+        transition: background-color .4s, transform .6s;
+        transform: rotate(45deg) translateY(-700%);
+    }
+
+
+
+
+@keyframes movimiento{
+    0%{
+        box-shadow:0 0 15px rgb(226, 230, 40);
+    }
+    10%{
+box-shadow:0 0 20px rgb(40, 230, 157); 
+    }
+    30%{
+box-shadow:0 0 15px rgb(226, 230, 40); 
+    }
+    60%{
+    box-shadow:0 0 20px rgb(40, 230, 157);
+    }
+    80%{
+    box-shadow:0 0 15px rgb(226, 230, 40);
+    }
+    100%{
+    box-shadow:0 0 20px rgb(40, 230, 157); 
+    }
+}
+
+
+
+
+
+.marcas{
+    position: relative;
+    width: 90%;
+    height: 100px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+box-shadow: 0 0  6px rgba(245, 2, 225, 0.705);
+    border-radius: 30px;
+    bottom: 40px;
+    margin: auto;
+}
+
+.marcas .marcasJob img{
+    display: inline-block;
+    width: 130px;
+    height: 95px;
+
+}
+
+.marcasJob {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
